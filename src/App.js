@@ -1,3 +1,4 @@
+import Counter from "./components/Counter";
 import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div>
       <h2>Let's get started!</h2>
       <ExpenseItem />
+      <Counter />
     </div>
   );
 }
