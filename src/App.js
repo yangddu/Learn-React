@@ -1,12 +1,10 @@
-import Counter from "./components/Counter";
-import ExpenseItem from "./components/ExpenseItem";
+import Converter from "./components/Converter";
 
 function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseItem />
-      <Counter />
+      <Converter />
     </div>
   );
 }

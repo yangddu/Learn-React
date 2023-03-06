@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Counter = () => {
   const [counter, setCounter] = useState(0);
   const onClick = () => {
-    setCounter(counter + 1);
+    setCounter((current) => current + 1);
   };
   return (
     <div>
