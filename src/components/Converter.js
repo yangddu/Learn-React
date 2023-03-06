@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 
 const Converter = () => {
-  const [minutes, setMinutes] = useState();
+  const [amount, setAmount] = useState();
   const [flipped, setFlipped] = useState(false);
   const onChange = (e) => {
-    setMinutes(e.target.value);
+    setAmount(e.target.value);
   };
   const reset = () => {
-    setMinutes(0);
+    setAmount();
   };
-  const onFlip = () => setFlipped(!flipped);
+  const onFlip = () => {
+    reset();
+    setFlipped(!flipped);
+  };
   return (
     <div>
       <h1>Super Converter</h1>
       <div>
         <label htmlFor="minutes">Minutes</label>
         <input
-          value={minutes || ""}
+          value={flipped ? amount * 60 : amount || ""}
           id="minutes"
           placeholder="Minutes"
           type="number"
@@ -24,11 +27,11 @@ const Converter = () => {
           disabled={flipped}
         />
       </div>
-      <h4>You want to convert {minutes}</h4>
+      <h4>You want to convert {amount}</h4>
       <div>
         <label htmlFor="hours">Hours</label>
         <input
-          value={Math.round(minutes / 60) || ""}
+          value={(flipped ? amount : Math.round(amount / 60)) || ""}
           id="hours"
           placeholder="Hours"
           type="number"
