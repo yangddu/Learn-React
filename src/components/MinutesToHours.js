@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Converter = () => {
   const [amount, setAmount] = useState();
-  const [flipped, setFlipped] = useState(false);
+  const [inverted, setInverted] = useState(false);
   const onChange = (e) => {
     setAmount(e.target.value);
   };
@@ -11,7 +11,7 @@ const Converter = () => {
   };
   const onFlip = () => {
     reset();
-    setFlipped(!flipped);
+    setInverted(!inverted);
   };
   return (
     <div>
@@ -19,28 +19,28 @@ const Converter = () => {
       <div>
         <label htmlFor="minutes">Minutes</label>
         <input
-          value={flipped ? amount * 60 : amount || ""}
+          value={inverted ? amount * 60 : amount || ""}
           id="minutes"
           placeholder="Minutes"
           type="number"
           onChange={onChange}
-          disabled={flipped}
+          disabled={inverted}
         />
       </div>
       <h4>You want to convert {amount}</h4>
       <div>
         <label htmlFor="hours">Hours</label>
         <input
-          value={(flipped ? amount : Math.round(amount / 60)) || ""}
+          value={(inverted ? amount : Math.round(amount / 60)) || ""}
           id="hours"
           placeholder="Hours"
           type="number"
           onChange={onChange}
-          disabled={!flipped}
+          disabled={!inverted}
         />
       </div>
       <button onClick={reset}>Reset</button>
-      <button onClick={onFlip}>Flip</button>
+      <button onClick={onFlip}>Turn back</button>
     </div>
   );
 };
