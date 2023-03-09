@@ -1,23 +1,9 @@
-import { useState } from "react";
-import Btn from "./components/Btn";
-import MinutesToHours from "./components/MinutesToHours";
+import Button from "./components/Button";
 
-function App(props) {
-  const [index, setIndex] = useState("xx");
-  const onSelect = (e) => {
-    setIndex(e.target.value);
-  };
+function App() {
   return (
     <div>
-      <Btn banana="Save changes" />
-      <Btn banana="Continue" />
-      <select value={index} onChange={onSelect}>
-        <option value="xx">Select your units</option>
-        <option value="0">Minutes & Hours</option>
-        <option value="1">Km & Miles</option>
-      </select>
-      {index === "xx" ? "Please select your units" : null}
-      {index === "0" ? <MinutesToHours /> : null}
+      <Button text="Continue" />
     </div>
   );
 }

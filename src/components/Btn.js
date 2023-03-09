@@ -1,22 +1,29 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Btn = ({ banana }) => {
+const Btn = ({ text, changeValue, fontSize }) => {
   return (
     <div>
       <button
+        onClick={changeValue}
         style={{
           backgroundColor: "tomato",
           color: "white",
           padding: "10px 20px",
           border: 0,
-          borderRadius: 10
+          borderRadius: 10,
+          fontSize
         }}
       >
-        Save Changes
+        {text}
       </button>
-      <div>{banana}</div>
     </div>
   );
+};
+
+Btn.propTypes = {
+  text: PropTypes.string.isRequired,
+  fontSize: PropTypes.number
 };
 
 export default Btn;
