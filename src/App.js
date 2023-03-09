@@ -1,14 +1,9 @@
-import Button from "./components/Button";
-import Cleanup from "./components/Cleanup";
-import Counter from "./components/Counter";
-import Hello from "./components/Hello";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
     <div>
-      <Button text="Continue" />
-      <Counter />
-      <Cleanup />
+      <TodoList />
     </div>
   );
 }
