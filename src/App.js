@@ -1,9 +1,11 @@
-import TodoList from "./components/TodoList";
+import CoinTracker from "./components/CoinTracker";
+import MovieApp from "./components/MovieApp";
+import SimpleWordcloud from "./components/wordCloud";
 
 function App() {
   return (
     <div>
-      <TodoList />
+      <MovieApp />
     </div>
   );
 }
