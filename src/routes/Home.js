@@ -14,11 +14,9 @@ const Home = () => {
     setMovies(json.data.movies);
     setLoading(false);
   };
-
   useEffect(() => {
     getMovies();
   }, []);
-  console.log(movies);
   return (
     <div>
       {loading ? (
@@ -27,6 +25,7 @@ const Home = () => {
         <div>
           {movies.map((movie) => (
             <Movie
+              id={movie.id}
               key={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
