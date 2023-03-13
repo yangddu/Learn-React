@@ -5,6 +5,8 @@ import TagCloud from "./components/TagCloud";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
+import ReactWordcloud from "react-wordcloud";
+import MyComponent from "./components/Random";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
     //   </Switch>
     // </Router>
     // <SimpleWordcloud />
-    <TagCloud />
+    // <TagCloud />
+    // <SimpleWordcloud />
+    <MyComponent />
   );
 }
 
