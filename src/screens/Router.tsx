@@ -11,6 +11,7 @@ import Header from "../components/Header";
 import About from "./About";
 import Home from "./Home";
 import NotFound from "./NotFound";
+import Followers from "./users/Followers";
 import User from "./users/User";
 
 const Router = createBrowserRouter([
@@ -29,7 +30,17 @@ const Router = createBrowserRouter([
       },
       {
         path: "users/:userId",
-        element: <User />
+        element: <User />,
+        children: [
+          {
+            path: "followers",
+            element: <Followers />
+          },
+          {
+            path: "following",
+            element: <Followers />
+          }
+        ]
       }
     ],
     errorElement: <NotFound />
