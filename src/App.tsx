@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import Circle from "./components/Circle";
+import Header from "./components/Header";
+import Router from "./screens/Router";
 
 function App() {
   const [value, setValue] = useState("");
@@ -15,15 +18,8 @@ function App() {
   };
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <input
-          value={value}
-          onChange={onChange}
-          type="text"
-          placeholder="username"
-        />
-        <button>Log in</button>
-      </form>
+      <Header />
+      <Outlet />
     </div>
   );
 }
