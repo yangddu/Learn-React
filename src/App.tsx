@@ -18,8 +18,7 @@ function App() {
   };
   return (
     <div>
-      <Header />
-      <Outlet />
+      <Router />
     </div>
   );
 }

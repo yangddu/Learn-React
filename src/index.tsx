@@ -9,9 +9,7 @@ import Router from "./screens/Router";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={lightTheme}>
-      <RouterProvider router={Router} />
-    </ThemeProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

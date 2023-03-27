@@ -11,3 +11,5 @@ export const darkTheme: DefaultTheme = {
   textColor: "white",
   btnColor: "teal"
 };
+
+export const theme = {};
