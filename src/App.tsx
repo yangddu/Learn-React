@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 import Circle from "./components/Circle";
 import Header from "./components/Header";
 import Router from "./screens/Router";
@@ -16,10 +16,19 @@ function App() {
     e.preventDefault();
     console.log("hello", value);
   };
+
+  const GlobalStyle = createGlobalStyle`
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  `;
+
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <Router />
-    </div>
+    </>
   );
 }
 

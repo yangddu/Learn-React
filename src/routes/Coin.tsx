@@ -7,7 +7,6 @@ interface Params {
 
 const Coin = () => {
   const { coinId } = useParams<Params>();
-
   return <h1>Coin : {coinId}</h1>;
 };
 export default Coin;
