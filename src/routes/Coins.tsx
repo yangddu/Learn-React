@@ -91,6 +91,8 @@ const Title = styled.h1`
 
 const Container = styled.div`
   padding: 50px 20px;
+  max-width: 480px;
+  margin: 0 auto;
 `;
 
 const Header = styled.header`
