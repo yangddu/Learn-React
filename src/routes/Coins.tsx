@@ -107,10 +107,11 @@ const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   color: white;
-  background-color: ${(props) => props.theme.bgColor};
+  background-color: #000;
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 15px;
+
   a {
     display: flex;
 

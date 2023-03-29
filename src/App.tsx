@@ -22,6 +22,14 @@ function App() {
       text-decoration: none;
       color: inherit;
     }
+    ul, li {
+      list-style: none;
+    }
+    body {
+      background-color: ${(props) => props.theme.bgColor};
+      color: ${(props) => props.theme.textColor}
+    }
+
   `;
 
   return (
