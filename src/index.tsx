@@ -6,6 +6,7 @@ import App from "./App";
 import { theme } from "./theme";
 import {} from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ ReactDOM.render(
       <ThemeProvider theme={theme}>
         <App />
       </ThemeProvider>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById("root")
