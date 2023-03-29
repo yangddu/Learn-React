@@ -164,6 +164,8 @@ const Title = styled.h1`
 `;
 
 const Container = styled.div`
+  max-width: 480px;
+  margin: 0 auto;
   padding: 50px 20px;
 `;
 
