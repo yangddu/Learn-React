@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import { useRecoilValue } from "recoil";
+import styled, {
+  createGlobalStyle,
+  keyframes,
+  ThemeProvider
+} from "styled-components";
+import { isDarkAtom } from "./atoms";
 import Circle from "./components/Circle";
 import Header from "./components/Header";
 import Router from "./screens/Router";
+import { darkTheme, lightTheme } from "./theme";
 
 function App() {
+  const isDark = useRecoilValue(isDarkAtom);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [value, setValue] = useState("");
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value;
@@ -34,8 +44,10 @@ function App() {
 
   return (
     <>
-      <GlobalStyle />
-      <Router />
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Router />
+      </ThemeProvider>
     </>
   );
 }
