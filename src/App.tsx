@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import DiaryList from "./components/DiaryList";
 import Editor from "./components/Editor";
 
@@ -62,9 +62,22 @@ const App = () => {
     getData();
   }, []);
 
+  const getDataAnalysis = useMemo(() => {
+    const goodCount = data.filter((item) => item.emotion >= 3).length;
+    const badCount = data.length - goodCount;
+    const goodRatio = (goodCount / data.length) * 100;
+    return { goodCount, badCount, goodRatio };
+  }, [data.length]);
+
+  const { goodCount, badCount, goodRatio } = getDataAnalysis;
+
   return (
     <div>
       <Editor onCreate={createMemo} />
+      <div>전체 일기 : {data.length}</div>
+      <div>굿 카운트 : {goodCount}</div>
+      <div>뱃 카운트 : {badCount}</div>
+      <div>굿 비율 : {goodRatio}</div>
       <DiaryList
         diaryList={data}
         onDelete={deleteMemo}
