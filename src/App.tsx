@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import OptimizeTest from "./\bOptimizeTest";
 import DiaryList from "./components/DiaryList";
 import Editor from "./components/Editor";
 
@@ -73,6 +74,7 @@ const App = () => {
 
   return (
     <div>
+      <OptimizeTest />
       <Editor onCreate={createMemo} />
       <div>전체 일기 : {data.length}</div>
       <div>굿 카운트 : {goodCount}</div>
