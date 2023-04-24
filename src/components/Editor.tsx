@@ -65,7 +65,7 @@ const Editor = ({ onCreate }: any) => {
         </select>
       </div>
       <div>
-        <button onClick={handleSubmit}>저장</button>
+        <button onClick={handleSubmit}>추가하기</button>
       </div>
     </div>
   );
