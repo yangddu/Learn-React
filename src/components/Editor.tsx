@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const Editor = () => {
+const Editor = ({ onCreate }: any) => {
+  const authorInput: any = useRef();
+  const contentsInput: any = useRef();
   const [state, setState] = useState({
     author: "",
     contents: "",
     emotion: 1
   });
-
   const handleChangeState = (e: React.ChangeEvent<any>) => {
     setState({
       ...state,
@@ -15,7 +16,15 @@ const Editor = () => {
   };
 
   const handleSubmit = () => {
-    alert("success");
+    if (state.author.length < 1) {
+      authorInput.current.focus();
+      return;
+    }
+    if (state.contents.length < 5) {
+      contentsInput.current.focus();
+      return;
+    }
+    onCreate(state.author, state.contents, state.emotion);
     setState({
       author: "",
       contents: "",
@@ -31,6 +40,7 @@ const Editor = () => {
           name="author"
           value={state.author}
           onChange={handleChangeState}
+          ref={authorInput}
         />
       </div>
       <div>
@@ -38,6 +48,7 @@ const Editor = () => {
           name="contents"
           value={state.contents}
           onChange={handleChangeState}
+          ref={contentsInput}
         />
       </div>
       <div>
